@@ -9,15 +9,10 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-//Rtns the tail (everything except the first entry in an array)
 const tail = function(arr1) {
-  let tailArray = [];
-  //Loop starting at 1 instead of 0 > IoT skip the head
-  for (let i = 1; i < arr1.length; i++) {
-    tailArray.push(arr1[i]);
-  }
-  return tailArray;
+  return arr1.slice(1);
 };
+
 
 const result = tail(["Hello", "Lighthouse", "Labs"]);
 const words = ["Yo Yo", "Lighthouse", "Labs"];
@@ -26,10 +21,9 @@ const emptyArr = [];
 
 tail(words);
 
-
 assertEqual(result, ["Lighthouse", "Labs"]); // => will always fail!
-assertEqual(words.length,3);
+assertEqual(words.length, 3);
+assertEqual(words.length, 5);
 assertEqual(tail(headArr), []);
 assertEqual(tail(emptyArr), []);
-
-
+assertEqual(tail(words), ['other words', 'hi']);
