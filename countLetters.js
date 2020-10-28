@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   let passEmoji = String.fromCodePoint(0x2705); // Green Check
   let failEmoji = String.fromCodePoint(0x26D4); // No Entry Emoji
 
@@ -9,20 +9,20 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const countLetters = function (orgString) {
-  const modString = orgString.split(' ').join('')
-  let tally = {}
-  for (ltr of modString) {
+const countLetters = function(orgString) {
+  const modString = orgString.split(' ').join('');
+  let tally = {};
+  for (let ltr of modString) {
     if (tally[ltr]) {
       tally[ltr]++;
     } else {
       tally[ltr] = 1;
     }
   }
-return tally;
-}
+  return tally;
+};
 
-const test1 = (countLetters('lighthouse   in the house  rrr'))
+const test1 = (countLetters('lighthouse   in the house  rrr'));
 
-assertEqual(test1['l'],1)
-assertEqual(test1['r'],3)
+assertEqual(test1['l'], 1);
+assertEqual(test1['r'], 3);
