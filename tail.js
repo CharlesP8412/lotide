@@ -21,7 +21,7 @@ const emptyArr = [];
 
 tail(words);
 
-assertEqual(result, ["Lighthouse", "Labs"]); // => will always fail!
+assertEqual(result, ["Lighthouse", "Labs"]); // => will always fail! < Not any more it wont
 assertEqual(words.length, 3);
 assertEqual(words.length, 5);
 assertEqual(tail(headArr), []);
