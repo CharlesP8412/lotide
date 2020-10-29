@@ -1,11 +1,11 @@
 const assertEqual = function(actual, expected) {
-  let passEmoji = String.fromCodePoint(0x2705); // Green Check
-  let failEmoji = String.fromCodePoint(0x26D4); // No Entry Emoji
+//   let passEmoji = String.fromCodePoint(0x2705); // Green Check
+//   let failEmoji = String.fromCodePoint(0x26D4); // No Entry Emoji
 
   if (actual === expected) {
-    console.log(`${passEmoji}> Assertion Passed: ${actual} === ${expected}`);
+    console.log(`✅> Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`${failEmoji}> Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`⛔️> Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 assertEqual("Lighthouse Labs", "Bootcamp");
