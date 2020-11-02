@@ -16,7 +16,7 @@ const middle = function (arrayToMiddle) {
     //Odd
   } else if (x % 2 === 1) {
     let middleOddIndex = ((x / 2 + 0.5) - 1)
-    return arrayToMiddle[middleOddIndex];
+    return [arrayToMiddle[middleOddIndex]];
 
     //Even length
   } else if (x % 2 === 0) {
