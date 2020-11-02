@@ -1,17 +1,13 @@
 const assertEqual = function (actual, expected) {
-  let passEmoji = String.fromCodePoint(0x2705); // Green Check
-  let failEmoji = String.fromCodePoint(0x26D4); // No Entry Emoji
-  
-
   if (actual === expected) {
-    console.log(`${passEmoji}> Assertion Passed: ${actual} === ${expected}`);
+    console.log(`✅> Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`${failEmoji}> Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`⛔️> Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
 const eqArrays = function (arr1, arr2) {
-// Added length check to catch non starters
+  // Added length check to catch non starters
   let arr1Length = arr1.length
   let arr2Length = arr2.length
   if (arr1Length === arr2Length) {
@@ -27,7 +23,7 @@ const eqArrays = function (arr1, arr2) {
   }
 }
 
-
+/* //--ORIGINAL --
 // Ret true if both obj have same keys and values ELSE false
 const eqObjects = function (object1, object2) {
   let status = false;
@@ -40,15 +36,15 @@ const eqObjects = function (object1, object2) {
   }
 
   //Iterate Object 1, and Object 2
-  for (let val1 in object1) {
-    for (let val2 in object2) {
+  for (let key1 in object1) {
+    for (let key2 in object2) {
       // Check Keys against eachother
-      if (val1 === val2) {
+      if (key1 === key2) {
         // Check Key values
-        if (object1[val1] === object2[val2]) {
+        if (object1[key1] === object2[key2]) {
           status = true;
         } else {
-          if (eqArrays(object1[val1], object2[val2])) {
+          if (eqArrays(object1[key1], object2[key2])) {
             status = true;
           } else {
             return false;
@@ -58,8 +54,52 @@ const eqObjects = function (object1, object2) {
     }
   }
   return status;
-};
+};  */
 
+//RECURSION VERSION
+//RECUSION CASE: If the object Value is another object (Run the function again)
+//BASE CASE: Finish running all keys
+const eqObjects = function (object1, object2) {
+  let status = false;
+  //Determine # of Keys and see if they are equal > if NOT rtn FALSE
+  const ob1Length = Object.keys(object1).length;
+  const ob2Length = Object.keys(object2).length;
+  if (ob1Length !== ob2Length) {
+    return false;
+  }
+
+  //Iterate Object 1, and Object 2
+  for (let key1 in object1) {
+    for (let key2 in object2) {
+
+      // Check Keys against eachother
+      if (key1 === key2) {
+        // Check Key values
+        let val1 = object1[key1];
+        let val2 = object2[key1];
+        if (val1 === val2) {
+          status = true;
+
+          //Are they arrays?
+        } else if (Array.isArray(val1) && Array.isArray(val2)) {
+          status = eqArrays(val1, val2);
+
+          //ARE THEY OBJECTS?
+        } else if (typeof val1 === 'object' && typeof val2 === 'object') {
+
+          //RECURSION HERE > ARE THEY OBJECT IF SO RUN AGAIN
+          // Put those objects into the function 
+          if (eqObjects(val1, val2) === false) {
+            return false;
+          }
+        } else {
+          return false;
+        }
+      }
+    }
+  }
+  return status;
+};
 
 
 const ab = { a: "1", b: "2" };
@@ -76,6 +116,12 @@ assertEqual(eqObjects(cd, dc), true); // => true
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2), false); // => false
 
+let test1 = eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }) // => true
+assertEqual(test1, true)
 
-// ??? Passes assertion but unsure if I am on the right track / or if I am taking the long road to get there
-// Also how do I get emojis (pictures) directly in VSCode ()
+let test2 = eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }) // => false
+assertEqual(test2, false)
+
+
+let test3 = eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }) // => false
+assertEqual(test3, false)

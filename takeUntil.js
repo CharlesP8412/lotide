@@ -12,6 +12,7 @@ const takeUntil = function (array, callback) {
     //CONDITION TRUE
     if (callback(item) === true) {
       return results
+
     } else {
       results.push(item)
       //Do this until hit the TRUE w. Callback
