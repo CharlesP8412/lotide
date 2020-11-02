@@ -1,19 +1,21 @@
-const eqArrays = function(arr1, arr2) {
-  // Added length check to catch non starters
-  let arr1Length = arr1.length;
-  let arr2Length = arr2.length;
-  if (arr1Length === arr2Length) {
+const eqArrays = require('./eqArrays');
 
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-      return true;
-    }
-  } else {
-    return false;
-  }
-};
+// const eqArrays = function(arr1, arr2) {
+//   // Added length check to catch non starters
+//   let arr1Length = arr1.length;
+//   let arr2Length = arr2.length;
+//   if (arr1Length === arr2Length) {
+
+//     for (let i = 0; i < arr1.length; i++) {
+//       if (arr1[i] !== arr2[i]) {
+//         return false;
+//       }
+//       return true;
+//     }
+//   } else {
+//     return false;
+//   }
+// };
 
 
 // Ret true if both obj have same keys and values ELSE false
@@ -48,16 +50,16 @@ const eqObjects = function(object1, object2) {
   return status;
 };
 
-// Assert Objects, instead of comparing true v false, will compare both objects
-// EXPECT: ✅✅✅ Assertion Passed: [object Object] === [object Object]
-// OR:     🛑🛑🛑 Assertion Failed: [object Object] !== [object Object]
-const assertObjectsEqual = function(actual, expected) {
-  const inspect = require('util').inspect; // <= add this line  >>  console.log(`Example label: ${inspect(actual)}`);
-  if (eqObjects(actual, expected) === true) {
-    console.log(`✅> Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
-  } else {
-    console.log(`⛔️> Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
-  }
-};
-assertObjectsEqual({ a: '1', b: 2 }, { b: 2, a: '1' });
-assertObjectsEqual({ a: '1', b: 2 }, { b: 2, a: '1', c:'2' });
+// // Assert Objects, instead of comparing true v false, will compare both objects
+// // EXPECT: ✅✅✅ Assertion Passed: [object Object] === [object Object]
+// // OR:     🛑🛑🛑 Assertion Failed: [object Object] !== [object Object]
+// const assertObjectsEqual = function(actual, expected) {
+//   const inspect = require('util').inspect; // <= add this line  >>  console.log(`Example label: ${inspect(actual)}`);
+//   if (eqObjects(actual, expected) === true) {
+//     console.log(`✅> Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+//   } else {
+//     console.log(`⛔️> Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+//   }
+// };
+// assertObjectsEqual({ a: '1', b: 2 }, { b: 2, a: '1' });
+// assertObjectsEqual({ a: '1', b: 2 }, { b: 2, a: '1', c:'2' });

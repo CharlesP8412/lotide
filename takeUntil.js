@@ -23,16 +23,16 @@ const takeUntil = function (array, callback) {
 
 module.export = takeUntil;
 
-// INPUT
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);   // Goes until it hits something < 0
-console.log(results1);
+// // INPUT
+// const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+// const results1 = takeUntil(data1, x => x < 0);   // Goes until it hits something < 0
+// console.log(results1);
 
-console.log('---');
+// console.log('---');
 
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ',');  //Goes Until it hits a lone comma ,
-console.log(results2);
+// const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
+// const results2 = takeUntil(data2, x => x === ',');  //Goes Until it hits a lone comma ,
+// console.log(results2);
 
 
 /*

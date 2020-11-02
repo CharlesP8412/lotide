@@ -31,7 +31,3 @@ const letterPositions = function(sentence) {
 };
 module.export = letterPositions;
 
-let test = 'hello';
-// let test = "lighthouse labs in the house";
-
-letterPositions(test);

@@ -1,34 +1,3 @@
-const passEmoji = String.fromCodePoint(0x2705); // Green Check
-const failEmoji = String.fromCodePoint(0x26D4); // No Entry Emoji
-
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`${passEmoji}> Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`${failEmoji}> Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-// Compare 2 arrays rtn true or false
-const eqArrays = function (array1, array2) {
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-
-//Assertion for 2x arrays w. Message (actual and expected will not show exact diffrencs if its type)
-const assertArraysEqual = function (actual, expected) {
-  if (eqArrays(actual, expected) === true) {
-    console.log(`${passEmoji}> Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`${failEmoji}> Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 
 const without = function(source, itemsToRemove) {
   let newArray = [];
@@ -55,10 +24,10 @@ assertArraysEqual(test2, ['1', '2'])
 assertArraysEqual(test3, ['1', '2'])
  */
 
-const words = ["hello", "world", "lighthouse"];
+// const words = ["hello", "world", "lighthouse"];
 
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-console.log("POST W/o: " +words)
+// without(words, ["lighthouse"]); // no need to capture return value for this test case
+// console.log("POST W/o: " +words)
 
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+// // Make sure the original array was not altered by the without function
+// assertArraysEqual(words, ["hello", "world", "lighthouse"]);

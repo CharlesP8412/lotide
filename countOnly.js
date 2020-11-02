@@ -3,17 +3,6 @@ given an array and an object. It will return an object containing counts of ever
 
 */
 
-const assertEqual = function (actual, expected) {
-  let passEmoji = String.fromCodePoint(0x2705); // Green Check
-  let failEmoji = String.fromCodePoint(0x26D4); // No Entry Emoji
-
-  if (actual === expected) {
-    console.log(`${passEmoji}> Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`${failEmoji}> Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 const countOnly = function (allItems, itemsToCount) {
   let tally = {}
 
