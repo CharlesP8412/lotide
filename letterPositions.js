@@ -29,6 +29,7 @@ const letterPositions = function(sentence) {
   }
   return results;
 };
+module.export = letterPositions;
 
 let test = 'hello';
 // let test = "lighthouse labs in the house";

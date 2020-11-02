@@ -19,6 +19,7 @@ const eqArrays = function (array1, array2) {
   return true;
 };
 
+
 //Assertion for 2x arrays w. Message (actual and expected will not show exact diffrencs if its type)
 const assertArraysEqual = function (actual, expected) {
   if (eqArrays(actual, expected) === true) {
@@ -43,6 +44,8 @@ const without = function(source, itemsToRemove) {
     }
   }
 };
+
+module.export = without;
 /* 
 const test1 = without([1, 2, 3], [1]) // => [2, 3]
 const test2 = (without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]

@@ -1,4 +1,4 @@
-const assert = require('chai').assert;
+// const assert = require('chai').assert;
 const assertArraysEqual = require('../assertArraysEqual');
 
 assertArraysEqual([10, 2], [10, 2]);
@@ -21,7 +21,7 @@ assertArraysEqual(test3, [2])
 assertArraysEqual(test4, [3])
 assertArraysEqual(test5, [2, 3])
 assertArraysEqual(test6, [3, 4])
-
+/*
 describe("#assertArraysEqual", () => {
 
   it("", () => {
@@ -50,3 +50,5 @@ describe("#assertArraysEqual", () => {
 
   
 });
+
+*/
