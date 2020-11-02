@@ -1,35 +1,59 @@
-const assertEqual = function (actual, expected) {
-  let passEmoji = String.fromCodePoint(0x2705); // Green Check
-  let failEmoji = String.fromCodePoint(0x26D4); // No Entry Emoji
-
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
-    console.log(`${passEmoji}> Assertion Passed: ${actual} === ${expected}`);
+    console.log(`✅> Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`${failEmoji}> Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`⛔️> Assertion Failed: ${actual} !== ${expected}`);
   }
 };
-/* assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual("Computer", "Computer");
-assertEqual(1, 1);
-assertEqual(4, 1); */
 
-const eqArrays = function (arr1, arr2) {
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
+
+
+//Used Recursion to check NESTED ARRAYS
+const eqArrays = function(arr1, arr2) {
+  let status = false;
+
+  //CHECK LENGTHS otherwise non starter
+  if (arr1.length !== arr2.length) {
+    return false;
   }
-  return true;
-}
 
-const s1 = eqArrays([1, 2, 3], [1, 2, 3]) // => true
-const s2 = eqArrays([1, 2, 3], [3, 2, 1]) // => false
-const s3 = eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
-const s4 = eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
+  arr1.forEach(function(element, index) {
+    let item1 = arr1[index];
+    let item2 = arr2[index];
+    //RECURSION CASE,
+    if (Array.isArray(item1) && Array.isArray(item2)) {
+      status = eqArrays(item1, item2);
+    
 
-console.log(s1)
-console.log(s2)
-console.log(s3)
-console.log(s4)
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertEqual(eqArrays([1, 2, 3], [1, 2, '3']), false); // => should PASS
+    //BASE CSE
+    } else if (item1 !== item2) {
+      status = false;
+      return false;
+    } else {
+      status = true;
+    }
+
+  });
+  return status;
+};
+
+
+// const s1 = eqArrays([1, 2, 3], [1, 2, 3]) // => true
+// const s2 = eqArrays([1, 2, 3], [3, 2, 1]) // => falsestatus
+
+// const s5 = eqArrays([[2, 3], [4]], [[2, 3], [4]]) // => true
+// const s6 = eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]) // => false
+// const s7 = eqArrays([[2, 3], [4]], [[2, 3], 4]) // => false
+
+
+// console.log(assertEqual(s5, true));
+// console.log(assertEqual(s6, false));
+// console.log(assertEqual(s7, false));// --
+// const eqArrays = function (arr1, arr2) {
+//   for (let i = 0; i < arr1.length; i++) {
+//     if (arr1[i] !== arr2[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
