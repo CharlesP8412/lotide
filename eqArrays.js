@@ -32,5 +32,5 @@ const eqArrays = function(arr1, arr2) {
   return status;
 };
 
-console.log(eqArrays([1], [1]))
+
 module.exports = eqArrays;

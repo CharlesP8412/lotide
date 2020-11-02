@@ -1,8 +1,22 @@
+const assert = require('chai').assert;
 const head = require('../head.js');
-const assertEqual = require('../assertEqual');
 
+describe("#head", () => {
+  it("returns 1 for [1, 2, 3]", () => {
+    assert.strictEqual(head([1, 2, 3]), 1);
+  });
 
-assertEqual(head([5, 6, 7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head([55]), 55);
-assertEqual(head([]), undefined);
+  it("returns '5' for ['5']", () => {
+    assert.strictEqual(head(['5']), '5'); 
+  });
+
+  it("returns strings, 'Hello' in index 0", () => {
+    assert.strictEqual(head(["Hello", "Lighthouse", "Labs"]), 'Hello'); 
+  });
+
+  it("return undefined when array is empty", () => {
+    assert.strictEqual(head([]), undefined); 
+  });
+
+  
+});
