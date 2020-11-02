@@ -1,3 +1,7 @@
+//--!!!--BUG: cant handle two empty arrays [],[]
+//  particularly when fed from other functions.  
+//ACTION: Add check case if empty to give an error
+
 
 //Used Recursion to check NESTED ARRAYS
 const eqArrays = function(arr1, arr2) {
@@ -28,4 +32,5 @@ const eqArrays = function(arr1, arr2) {
   return status;
 };
 
+console.log(eqArrays([1], [1]))
 module.exports = eqArrays;
