@@ -1,6 +1,3 @@
-//--!!!--BUG: cant handle two empty arrays [],[]
-//  particularly when fed from other functions.  
-//ACTION: Add check case if empty to give an error
 
 
 //Used Recursion to check NESTED ARRAYS

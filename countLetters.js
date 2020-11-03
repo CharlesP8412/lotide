@@ -12,7 +12,3 @@ const countLetters = function(orgString) {
 };
 
 module.export = countLetters;
-// const test1 = (countLetters('lighthouse   in the house  rrr'));
-
-// assertEqual(test1['l'], 1);
-// assertEqual(test1['r'], 3);
