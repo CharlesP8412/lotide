@@ -5,12 +5,9 @@ take 2 arguments
 2. callback function to be used
 */
 
-const eqArrays = require('./eqArrays');
+// const assertArraysEqual = require('./assertArraysEqual');
 
 
-const words = ["ground", "control", "to", "major", "tom"];
-const words2 = ["cat", "dog", "mouse", "bird", "elephant"];
-const words3 = ["ground", "wind", "fire", "eartgh", "water"];
 
 const map = function (array, callback) {
 
@@ -22,8 +19,11 @@ const map = function (array, callback) {
   return results
 }
 
-module.export = map;
+module.exports = map;
 
+// const words = ["ground", "control", "to", "major", "tom"];
+// const words2 = ["cat", "dog", "mouse", "bird", "elephant"];
+// const words3 = ["ground", "wind", "fire", "eartgh", "water"];
 
 // const results1 = map(words, word => word[0]);
 // const results2 = map(words2, word => word[0]);

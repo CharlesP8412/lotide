@@ -11,4 +11,4 @@ const countLetters = function(orgString) {
   return tally;
 };
 
-module.export = countLetters;
+module.exports = countLetters;

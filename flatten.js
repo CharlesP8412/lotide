@@ -21,6 +21,7 @@ function flatten(array) {
   return newArray;
 };
 
+module.exports = flatten;
 console.log(flatten([1, 2, [3, 4], 5, [6]])) // => [1, 2, 3, 4, 5, 6]
 
 let test1 = [1, 2, 3, 4, 5];

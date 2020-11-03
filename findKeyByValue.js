@@ -8,7 +8,7 @@ const findKeyByValue = function(keys, value) {
   }
 };
 
-module.export = findKeyByValue;
+module.exports = findKeyByValue;
 
 
 // const bestTVShowsByGenre = {

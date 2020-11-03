@@ -21,7 +21,7 @@ const takeUntil = function (array, callback) {
   return results
 }
 
-module.export = takeUntil;
+module.exports = takeUntil;
 
 // // INPUT
 // const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];

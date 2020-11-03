@@ -29,5 +29,5 @@ const letterPositions = function(sentence) {
   }
   return results;
 };
-module.export = letterPositions;
+module.exports = letterPositions;
 

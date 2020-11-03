@@ -14,7 +14,7 @@ const without = function(source, itemsToRemove) {
   }
 };
 
-module.export = without;
+module.exports = without;
 /* 
 const test1 = without([1, 2, 3], [1]) // => [2, 3]
 const test2 = (without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]

@@ -28,7 +28,13 @@ describe("#countOnly", () => {
 
     assert.equal(result1['Jason'], 1);
   });
-  
+
+  // it("retrun a full object with correct info", () => {
+  //   const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+  //  Might need to include undefined in the whole array?
+  //   assert.equal(result1, {"Jason": 1, "Fang": 2});
+  // });
+
 
 
 
