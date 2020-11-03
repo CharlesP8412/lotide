@@ -1,7 +1,7 @@
 /* 
 
 const assert = require('chai').assert;
-// const head = require('../head.js');
+// const head = require('../head');
 
 describe("#INSERT NAME", () => {
 
@@ -12,4 +12,6 @@ describe("#INSERT NAME", () => {
 
 
   
-}); */
+});
+
+*/

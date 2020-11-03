@@ -26,6 +26,7 @@ const countOnly = function (allItems, itemsToCount) {
   return tally
 }
 
+
 module.export = countOnly;
 
 // const firstNames = [
@@ -39,12 +40,9 @@ module.export = countOnly;
 //   "Fang",
 //   "Joe"
 // ];
-
 // const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+// { Jason: 1, Fang: 2 }
+
+// console.log(result1)
 
 
-// //Assert = can only check one set at a time
-// assertEqual(result1["Jason"], 1);
-// assertEqual(result1["Karima"], undefined);
-// assertEqual(result1["Fang"], 2);
-// assertEqual(result1["Agouhanna"], undefined);
