@@ -19,6 +19,7 @@ describe("#eqArrays", () => {
   const s3 = eqArrays([[2, 3], [4]], [[2, 3], [4]]) // => true
   const s4 = eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]) // => false
   const s5 = eqArrays([[2, 3], [4]], [[2, 3], 4]) // => false
+  const s6 = eqArrays([],[]); // => True;
 
   it(`returns true with standard arrays`, () => {
     assert.strictEqual(s1, true);
@@ -35,6 +36,10 @@ describe("#eqArrays", () => {
 
   it("return false; with mismatched nested arrays", () => {
     assert.strictEqual(s5, false);
+  });
+
+  it("return true; with two initially empty arrays ([], []) ", () => {
+    assert.strictEqual(s6, true);
   });
 
 
