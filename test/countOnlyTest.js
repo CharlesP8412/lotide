@@ -1,11 +1,6 @@
 const countOnly = require('../countOnly');
 const assert = require('chai').assert;
 
-/* 
--------------------------------------
-WiP
-STILL WORKING ON IT
-*/
 
 describe("#countOnly", () => {
 
@@ -25,17 +20,22 @@ describe("#countOnly", () => {
     // console.log(">>>",result1)
     const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
     // assert.equal(1, 1)
-
+    
     assert.equal(result1['Jason'], 1);
   });
-
+  
+  /* 
+  -------------------------------------
+  WiP
+  STILL WORKING ON IT
+  */
   // it("retrun a full object with correct info", () => {
   //   const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
   //  Might need to include undefined in the whole array?
   //   assert.equal(result1, {"Jason": 1, "Fang": 2});
   // });
-
-
+  
+  
 
 
 });
